@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+header{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    padding: 15px;
+    color: white;
+    background-color: black;
+    /* borda */
+    border: 4px dashed rgb(255, 136, 0);
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+header a {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: rgb(12, 161, 224);
+    transition: font-size 0.3s, color 0.3s;
+}
+
+header a:hover{
+    font-size: 1.3em;
+    color: rgb(207, 0, 253);
+}
+
+
+
+
+.meusestudos{
+    border: 2px solid red;
+}
+
+.informeusestudos{
+    border: 3px dashed blue;
+}
+
+/* Aqui está dentro do meu main */
+.informeusestudos img{
+    width: 100px;
+}
+
