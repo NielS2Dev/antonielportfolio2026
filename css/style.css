@@ -32,15 +32,32 @@ header a:hover{
     color: rgb(207, 0, 253);
 }
 
+main{
+    /* Isso é só para testes, alterar em breve. */
+
+    height: 600px;
+    background-image: url(../wallpapers/wallpaper_001.jpg);
+    background-size: cover;
+}
 
 
+.sobremim{
+    /* possivelmente alterar em breve também */
+
+    border: 6px solid rgb(0, 255, 0);
+    color: white;
+}
 
 .meusestudos{
     border: 2px solid red;
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 .informeusestudos{
     border: 3px dashed blue;
+    text-align: center;
+    padding: 5px;
 }
 
 /* Aqui está dentro do meu main */
@@ -48,3 +65,8 @@ header a:hover{
     width: 100px;
 }
 
+.todososmeusestudos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+}
