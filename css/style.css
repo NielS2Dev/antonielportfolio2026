@@ -6,25 +6,39 @@
     box-sizing: border-box;
 }
 
+:root{
+    --minha_fonte: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 header{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--minha_fonte);
     font-size: 1.2em;
     padding: 15px;
     color: white;
     background-color: black;
-    /* borda */
-    border: 4px dashed rgb(255, 136, 0);
+
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header p {
-    font-size: 1.2em;
-}
-
-header a {
+header a, header p {
     font-size: 1.2em;
     text-decoration: none;
-    color: rgb(12, 161, 224);
+    color: rgb(255, 255, 255);
     transition: font-size 0.3s, color 0.3s;
+}
+
+.redesociais img{
+    width: 100px;
+    padding-right: 15px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.redesociais img:hover{
+    transform: scale(1.2);
+    filter: drop-shadow(6px 2px 3px rgb(4, 236, 0));
 }
 
 header a:hover{
@@ -33,40 +47,131 @@ header a:hover{
 }
 
 main{
-    /* Isso é só para testes, alterar em breve. */
-
-    height: 600px;
+    width: 100%;
+    /* lembrar de sempre usar min-heigh e estudar um pouco sobre */
+    min-height: 100vh;
     background-image: url(../wallpapers/wallpaper_001.jpg);
     background-size: cover;
+    flex: 1;
 }
 
+.fotoperfil{
+    width: 300px;
+    border-radius: 50%;
+    padding-left: 15px;
+    transition: filter 0.3s, transform 0.3s;
+}
+
+.fotoperfil:hover{
+    cursor: pointer;
+    filter: drop-shadow(4px 4px 4px rgb(0, 140, 255));
+    transform: scale(1.1);
+}
+
+/* Bloco "sobremim" é a div que possue minha foto é uma breve apresentação minha */
 
 .sobremim{
-    /* possivelmente alterar em breve também */
-
-    border: 6px solid rgb(0, 255, 0);
+    padding: 40px 0px 40px 0px;
     color: white;
+    display: flex;
+    flex-flow: row nowrap;
+    text-align: center;
+    justify-content: space-around;
 }
 
+.sobremim h1{
+    padding-top: 50px;
+}
+
+.sobremim p{
+    font-size: 1.3em;
+    font-family: var(--minha_fonte);
+    padding-top: 10px;
+    font-weight: 300;
+}
+
+.textosobremim{
+    transition: text-shadow 0.3s;
+}
+
+.textosobremim:hover{
+    text-shadow: 3px 3px 3px rgb(255, 94, 0);
+    cursor: pointer;
+}
+/* bloco "Meusestudos" possui sobre meu progresso em estudos específicos. */
+
 .meusestudos{
-    border: 2px solid red;
     display: flex;
     flex-flow: column nowrap;
 }
 
+.meusestudos h3{
+    color: white; 
+    font-family: var(--minha_fonte);
+    font-size: 1.3em;
+    text-align: center;
+    padding: 50px;
+}
+
 .informeusestudos{
-    border: 3px dashed blue;
     text-align: center;
     padding: 5px;
 }
 
-/* Aqui está dentro do meu main */
 .informeusestudos img{
     width: 100px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.informeusestudos img:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(6px 3px 3px rgb(77, 255, 0));
+    cursor: pointer;
+}
+
+
+.informeusestudos p{
+    padding-top: 10px;
+    color: white;
+    font-family: var(--minha_fonte);
+    font-size: 1.2em;
 }
 
 .todososmeusestudos{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     justify-items: center;
+}
+
+.blocosecundario{
+    color: white;
+    font-family: var(--minha_fonte);
+    font-size: 1.2em;
+
+    padding-top: 30px;
+}
+
+.minhascertificacoes{
+    width: 100%;
+    padding: 50px;
+
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+footer a{
+    color: white;
+    font-size: 1.2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+}
+
+footer{
+    background-color: black;
+    text-align: center;
+    padding: 30px;
 }
