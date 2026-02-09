@@ -79,10 +79,17 @@ main{
 .sobremim{
     padding: 40px 0px 40px 0px;
     color: white;
-    display: flex;
+    /* display: flex;
     flex-flow: row nowrap;
     text-align: center;
-    justify-content: space-around;
+    justify-content: space-around; */
+
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 20px;
+
+    align-items: center;
+    justify-content: center;
 }
 
 .sobremim h1{
@@ -157,6 +164,7 @@ main{
 
     display: flex;
     justify-content: center;
+    gap: 50px;
 }
 
 .minhascertificacoes{
@@ -283,5 +291,46 @@ footer a:hover{
 
     header img:hover{
         transform: scale(1);
+    }
+
+    .fotoperfil{
+        width: 150px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .informeusestudos img{
+        width: 75px;
+    }
+
+    .informeusestudos p{
+        font-size: 1em;
+    }
+
+    .minhascertificacoes{
+        width: 450px;
+    }
+
+    .blocosecundario{
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width: 1046px){
+    .blocosecundario{
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 666px) {
+    iframe{
+        width: 460px;
+        height: 300px;
     }
 }
