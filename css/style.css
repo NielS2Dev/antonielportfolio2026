@@ -134,6 +134,7 @@ main{
 .informeusestudos img{
     width: 100px;
     transition: transform 0.3s, filter 0.3s;
+    filter: drop-shadow(2px 2px 2px blue);
 }
 
 .informeusestudos img:hover {
@@ -167,10 +168,6 @@ main{
     gap: 40px;
 }
 
-iframe{
-    padding-top: 25px;
-}
-
 .minhascertificacoes{
     width: 600px;
     padding: 50px;
@@ -179,6 +176,7 @@ iframe{
     background-color: rgba(95, 94, 94, 0.312);
     border-radius: 50px;
     transition: background-color 0.3s, box-shadow 0.3s;
+    border: 2px solid blue;
 }
 
 .minhascertificacoes h3{
@@ -190,6 +188,19 @@ iframe{
 .minhascertificacoes:hover{
     background-color: rgba(11, 11, 11, 0.932);  
     box-shadow: 3px 3px 3px blue;
+}
+
+.videoapresentacao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.videoapresentacao h3{
+    font-size: 1em;
+    text-align: justify;
+    padding: 0px 10px 0px 10px;
 }
 
 #curriculo{
@@ -218,7 +229,6 @@ iframe{
     padding-left: 15px;
     transition: transform 0.3s;
 }
-
 
 .meusprojetos{
     padding: 10px;
@@ -261,6 +271,12 @@ iframe{
     overflow: hidden;
 }
 
+
+iframe{
+    border: 2px solid blue;
+}
+
+
 footer{
     background-color: black;
     text-align: center;
@@ -284,7 +300,6 @@ footer a:hover{
     .sobrenome, .nomedocurso{
         display: none;
     }
-
     .redesociais img{
         width: 50px;
     }
@@ -332,7 +347,7 @@ footer a:hover{
     }
 }
 
-@media screen and (max-width: 1046px){
+@media screen and (max-width: 1100px){
     .blocosecundario{
         display: flex;
         flex-direction: column;
