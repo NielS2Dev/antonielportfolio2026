@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura com CSS Grid Area</title>
+    <style>
+        /* Reset básico para limpar as margens do navegador */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        /* CONFIGURAÇÃO DO GRID */
+        .grid-container {
+            display: grid;
+            height: 100vh; /* Ocupa 100% da altura da tela */
+            
+            /* Colunas: Lateral com 250px e o resto (1fr) para o conteúdo */
+            grid-template-columns: 250px 1fr;
+            
+            /* Linhas: Header(80px), Meio(flexível), Footer(60px) */
+            grid-template-rows: 80px 1fr 60px;
+
+            /* O MAPA DO SITE: Aqui você desenha a estrutura */
+            grid-template-areas: 
+                "header header"
+                "sidebar main"
+                "footer footer";
+
+            gap: 10px;
+            padding: 10px;
+        }
+
+        /* ATRIBUINDO OS NOMES ÀS ÁREAS */
+        .header { grid-area: header; background-color: #2c3e50; }
+        .sidebar { grid-area: sidebar; background-color: #34495e; }
+        .main { grid-area: main; background-color: #ecf0f1; color: #333 !important; }
+        .footer { grid-area: footer; background-color: #7f8c8d; }
+
+        /* Estilização apenas para visualização */
+        .grid-container > div, 
+        .grid-container > header, 
+        .grid-container > aside, 
+        .grid-container > main, 
+        .grid-container > footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Dica de Responsividade: Em telas menores que 600px, vira tudo uma coluna só */
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: 80px 100px 1fr 60px;
+                grid-template-areas: 
+                    "header"
+                    "sidebar"
+                    "main"
+                    "footer";
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <header class="header">
+            HEADER (topo)
+        </header>
+
+        <aside class="sidebar">
+            SIDEBAR (lateral)
+        </aside>
+
+        <main class="main">
+            CONTEÚDO PRINCIPAL (main)
+        </main>
+
+        <footer class="footer">
+            FOOTER (rodapé)
+        </footer>
+    </div>
+
+</body>
+</html>
