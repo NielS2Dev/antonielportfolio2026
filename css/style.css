@@ -218,7 +218,7 @@ main{
     transition: transform 0.3s, color 0.3s, filter 0.3s;
 }
 
-#curriculo h3:hover, img:hover{
+#curriculo h3:hover, .imagemcurriculo:hover{
     transform: scale(1.05);
     color: whitesmoke;
     filter: drop-shadow(3px 3px 3px rgb(255, 0, 238));
