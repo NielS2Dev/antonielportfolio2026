@@ -236,7 +236,11 @@ main{
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 10px;
+
+    /* grid-auto-rows: 1fr;
+    Isso serve se eu quiser que as rows fiquem do mesmo tamanho de acordo com as outras row */
+
 }
 
 .meusprojetos a{
@@ -246,6 +250,10 @@ main{
     text-decoration: none;
     font-size: 1.10em;
     transition: transform 0.4s, filter 0.3s, backdrop-filter 0.3s;
+
+    /* Como meu projeto está dentro de uma tag <a> serve para as outras crescerem igual
+    da mesma linha */
+    display: grid;
 }
 
 .meusprojetos a:hover{
@@ -255,10 +263,14 @@ main{
 }
 
 .meusprojetos img{
+    /* técnica aspect-ratio para aumentar o tamanho */
     width: 100%;
-    height: auto;
+    aspect-ratio: 16 / 9;
+
     display: block;
     border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .projetos{
@@ -271,6 +283,15 @@ main{
     overflow: hidden;
 }
 
+.projetos h3{
+    font-size: 0.9em;
+    font-weight: bolder;
+    text-align: justify;
+}
+
+.projetos p{
+    font-size: 0.8em;
+}
 
 iframe{
     border: 2px solid blue;
