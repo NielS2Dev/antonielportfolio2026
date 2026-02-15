@@ -14,6 +14,7 @@ html::-webkit-scrollbar{
     display: none;
 }
 
+
 img {
     width: 60px;
 }
@@ -30,25 +31,104 @@ body{
     ".      main    ."
     "footer footer footer"
     ;
+
+    background-image: url(../wallpapers/wallpaper_001.jpg);
+    background-size: cover;
 }
 
 header{
     grid-area: header;
     background-color: lightblue;
-
+    padding: 0px 5px 0px 5px;
     display: flex;
     justify-content: space-between;
+
+    background-color: rgba(0, 0, 0, 0.699);
+    backdrop-filter: blur(5px);
+    color: white;
+    align-items: center;
 }
+
+header a, header p {
+    font-size: 1.2em;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: font-size 0.3s, color 0.3s;
+    font-family: var(--minha_fonte);
+}
+
+.redesociais img{
+    width: 70px;
+    padding-right: 15px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.redesociais img:hover{
+    transform: scale(1.2);
+    filter: drop-shadow(6px 2px 3px rgb(4, 236, 0));
+}
+
+header a:hover{
+    font-size: 1.3em;
+    color: rgb(207, 0, 253);
+}
+
 
 main{
     grid-area: main;
-    background-color: lightgreen;
+    backdrop-filter: blur(15px);
 
     /* temporariamente */
     font-family: var(--minha_fonte);
     font-size: 1.1em;
-    color: black;
+    color: rgb(255, 255, 255);
+
+    padding: 15px;
+
+    justify-items: center;
+    box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.651);
+
+}
+
+h1{
+    font-size: 1.2em;
+    transition: transform 0.3s ease, text-shadow 0.3s;
+}
+
+h1:hover{
+    transform: scale(1.03);
+    text-shadow: 2px 2px 2px rgb(232, 8, 8);
+}
+
+.componentes li{
+    transition: transform 0.2s ease;
     
+}
+
+.componentes li:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.videoarduino{
+    margin-top: 15px;
+    width: 90%;
+    
+    text-align: center;
+}
+
+iframe{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+
+    box-shadow: 3px 3px 3px rgba(0, 0, 255, 0.199);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+iframe:hover{
+    transform: scale(1.04);
+    box-shadow: 4px 4px 4px rgba(0, 0, 255, 0.437);
 }
 
 footer{
@@ -66,4 +146,26 @@ footer a{
     color: rgb(255, 255, 255);
     font-size: 1em;
     font-family: var(--minha_fonte);
+}
+
+
+@media screen and (max-width: 820px) {
+    .sobrenome, .nomedocurso{
+        display: none;
+    }
+    .redesociais img{
+        width: 50px;
+    }
+
+    header, header a, header p{
+        font-size: 1em;
+    }
+
+    header:hover, header a:hover, header p:hover{
+        font-size: 1em;
+    }
+
+    header img:hover{
+        transform: scale(1);
+    }
 }
