@@ -20,6 +20,9 @@ img {
 }
 
 body{
+    counter-reset: secao-projeto;
+    /* Isso serve para criar o contador */
+
     min-height: 100vh;
 
     display: grid;
@@ -35,6 +38,7 @@ body{
     background-image: url(../wallpapers/wallpaper_001.jpg);
     background-size: cover;
 }
+
 
 header{
     grid-area: header;
@@ -88,6 +92,112 @@ main{
     justify-items: center;
     box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.651);
 
+}
+
+main h3::before{
+    counter-increment: secao-projeto; 
+    /* soma sempre mais +1 um incrimentador mesmo */
+
+    content: counter(secao-projeto) " -     "; /* Serve para exibir o contador antes */
+
+    color: yellow;
+    font-weight: bolder;
+    font-family: var(--minha_fonte);
+}
+
+main h3, .textos{
+    text-align: start;
+    justify-self: start;
+    padding-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main h3:hover{
+    transform: scale(1.03);
+    text-shadow: 3px 3px 3px rgba(0, 0, 255, 0.526);
+    cursor: pointer;
+}
+
+.textos p{
+    padding: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.textos p:hover{
+    background-color: rgba(0, 0, 0, 0.348);
+    box-shadow: inset 0px 0px 10px black;
+    border-radius: 15px;
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+ul{
+    padding-left: 30px;
+    font-weight: bolder;
+    font-family: var(--minha_fonte);
+    list-style-position: inside;
+    /* Serve para por a "bolinha" do ul dentro do background. */
+}
+
+ul span{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    text-decoration: underline;
+    font-size: 0.9em;
+
+}
+
+li {
+    padding-bottom: 5px;
+    transition: background-color 0.3s ease;
+}
+
+li:hover{
+    background-color: rgba(255, 0, 0, 0.434);
+}
+
+.areadedownload{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-bottom: 30px;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.areadedownload:hover{
+    background-color: rgba(0, 0, 0, 0.637);
+    box-shadow: 3px 3px 3px rgba(0, 0, 255, 0.379);
+}
+
+
+.areadedownload section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.areadedownload img{
+    width: 50px;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.areadedownload img:hover{
+    transform: scale(1.08);
+    filter: drop-shadow(3px 3px 3px blue);
+}
+
+.areadedownload section a{
+    padding-left: 15px;
+    text-decoration: none;
+    font-family: var(--minha_fonte);
+    color: white;
+    font-weight: bolder;
+    transition: transform 0.2s ease, text-shadow 0.2s ease;
+}
+
+.areadedownload section a:hover{
+    transform: scale(1.08);
+    text-shadow: 3px 3px 3px rgba(10, 222, 10, 0.785);
 }
 
 h1{
