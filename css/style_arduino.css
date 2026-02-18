@@ -315,6 +315,48 @@ h1:hover{
     text-align: center;
 }
 
+.explicandoprojeto{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.ultimostextinhos{
+    padding: 15px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.ultimostextinhos:hover{
+    background-color: rgba(0, 0, 0, 0.584);
+    cursor: pointer;
+    transform: scale(1.04);
+}
+
+.textoexplicandoprojeto{
+    counter-reset: secao-explicacao-projeto;
+}
+
+.textoexplicandoprojeto section{
+    margin-bottom: 15px;
+}
+
+
+.textoexplicandoprojeto h1{
+    font-family: var(--minha_fonte);
+    font-size: 1em;
+    padding-bottom: 20px;
+}
+
+
+.textoexplicandoprojeto section h1::before{
+    counter-increment: secao-explicacao-projeto;
+
+    content: counter(secao-explicacao-projeto) " -    ";
+}
+
+
+
 iframe{
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -327,6 +369,17 @@ iframe{
 iframe:hover{
     transform: scale(1.04);
     box-shadow: 4px 4px 4px rgba(0, 0, 255, 0.437);
+}
+
+.meucodigoarduino h2{
+    font-size: 1em;
+}
+
+.meucodigoarduino{
+    padding: 10px 0px 10px 0px;
+    background-color: black;
+    width: 100%;
+
 }
 
 footer{

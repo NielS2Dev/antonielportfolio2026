@@ -113,12 +113,108 @@
         
         <div class="fotodoprojetofinal">
             <h2>Foto do projeto montado na protoboard</h2>
-            <img src="../fotosarduinos/tudo montado completo.png" alt="foto_do_arduino_com_display_sensor_tudo_no_protoboard" id="foto_projeto_feito">
+            <img src="../fotosarduinos/tudo montado completo.png" alt="foto_do_arduino_com_display_sensor_tudo_no_protoboard" class="foto_projeto_feito">
+
+            <img src="../fotosarduinos/display 16x2 i2c.png" alt="" class="foto_projeto_feito">
+
+            <img src="../fotosarduinos/álcool isopropílico.png" alt="">
+
+            <img src="" alt="">
         </div>
 
         <div class="explicandoprojeto">
             <h3>Explicação do Projeto</h3>
-            <p>bla bla bla bla</p>
+            <div class="textoexplicandoprojeto">
+                <section>
+                    <h1>O Princípio do Ultrassom</h1>
+                    <p class="ultimostextinhos">
+                        O Sensor HC-SR04 Funciona de forma similar a um sonar de um morcego ou de um submarino. Ele possui dois "olhos" se é que podemos chamar assim em que um seria o emissor e o outro o receptor.
+                    </p>
+                     <ul>
+                            <li>Emissão
+                                <p>
+                                    O Emissor envia um pulso sonoro de alta frequência (ultrassom)
+                                </p>
+                            </li>
+
+                            <li>Eco
+                                <p>
+                                    Esse som viaja pelo ar, bate em um objeto e retorna para o receptor
+                                </p>
+                            </li>
+
+                        </ul>
+                </section>
+
+                <section>
+                    <h1>A Lógica do Código</h1>
+                    <p class="ultimostextinhos">
+                        O Arduino atua como um cronômetro de precisão, em que ele mede exatamente quanto tempo o som levou para ir e voltar, observação que durante a programação podemos acabar usando as unidades de medidas milímetros, centímetros e metros, e acabou sendo melhor CM, já que por ser um dispositivo barato, ele não é tão preciso para milímetros e muito menos para metros, logo em meus testes o que melhor funcionou foi usando a como medida a unidade de centímetros.
+
+                        Outro detalhe seria que como o a velocidade do som no ar é de aproximadamente 340m/s, o código faz uma continha...
+                    </p>
+
+                    <ul>
+                            <li>Multiplica o tempo pela velocidade do som</li>
+                            <li>
+                                Dividimos por 2(Já que o som faz o caminho de ida e volta)
+                            </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h1>A Exibição em Tempo Real</h1>
+                    <p class="ultimostextinhos">
+                        Após o cálculo, o valor é convertido para centímetros e enviado para o display LCD 16x2. O Código limpa a tela e atualiza o valor a cada 200 milissegundos, permitindo uma leitura de certa forma fluida e precisa, na condição de centimetros.
+                    </p>
+                </section>
+            </div>
+        </div>
+        
+        <div class="meucodigoarduino">
+            <h3>Codigo do Arduino</h3>
+
+            <section class="codigo">
+                <section class="secao-codigo">
+                    <h2>Código Fonte do Projeto(Arduino IDE) 💻</h2>
+                </section>
+
+                <div class="codigo-container">
+                    <pre><code>
+#include  &lt;HCSR04.h&gt;
+#include  &lt;LiquidCrystal_I2C.h&gt;
+
+const byte pinTrig = 8;
+const byte pinEcho = 9;
+
+LiquidCrystal_I2C lcd(0x27,2,1,0,4,5,6,7,3, POSITIVE);
+
+double *result;
+
+void setup(){
+HCSR09.begin(pinTrig, pinEcho);
+
+lcd.begin(16,2);
+lcd.backligh();
+}
+
+void loop(){
+result = HCSR09.measureDistanceCm();
+
+lcd.setCursor(0, 0);
+lcd.print("Distância:");
+lcd.print(result[0], 0);
+lcd.print(" cm    ");
+
+lcd.setCursor(1, 1);
+lcd.print("Régua do Niel");
+
+delay(200)
+}
+
+                    </code></pre>
+                </div>
+            </section>
         </div>
 
         <h3>Vídeo mostrando um pouco da criação do código 💻⚙️</h3>
