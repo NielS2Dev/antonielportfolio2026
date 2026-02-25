@@ -304,6 +304,29 @@ h1:hover{
     cursor: pointer;
 }
 
+.foto_projeto_rpg{
+    width: 100%;
+    padding: 25px;
+    border-radius: 80px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.rpg2{
+    text-align: center;
+}
+.foto_projeto_rpg2{
+    width: 100%;
+    padding: 25px;
+    border-radius: 80px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.foto_projeto_rpg:hover{
+    filter: drop-shadow(3px 3px 4px blue);
+    transform: scale(1.04);
+    cursor: pointer;
+}
+
 
 .esquemademontagem h3{
     font-family: var(--minha_fonte);
