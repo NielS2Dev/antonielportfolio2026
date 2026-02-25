@@ -1,232 +1,232 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Arduino</title>
-    <link rel="stylesheet" href="../css/style_arduino.css">
-</head>
-<body>
-    <header>
-        <div>
-            <a href="">
-                <h3>
-                    Antoniel 
-                    <span class="sobrenome">
-                        da silva Alves [Niel]
-                    </span>
-                </h3>
-                <a href="../index.html">VOLTAR</a>
-            </a>
-        </div>
-        
-        <div class="redesociais">
-            <a href="https://github.com/NielS2Dev" target="_blank"><img src="../icons/github.png" alt=""></a>
-            <a href="https://www.youtube.com/niels2l" target="_blank"><img src="../icons/youtube.png" alt=""></a>
-            <a href="https://www.instagram.com/niels2_dev/" target="_blank"><img src="../icons/instagram.png" alt=""></a>
-        </div>
-
-        <!-- end of my header -->
-    </header>
-
-    <main>
-        <div class="textos">
-            <h3>Projeto: Régua Digital com Sensor Ultrassônico e Arduino</h3>
-            <p>
-                A ideia aqui foi criar um medidor de distância em tempo real usando o <span>ARDUINO UNO R3</span>. É um projeto prático que mostra como transformar sinais sonoros em dados que no caso do meu exemplo será a distância do objeto.
-            </p>
-        </div>
-
-        <div class="textos">
-            <h3>O Hardware que eu usei foram os seguintes equipamentos.</h3>
-        
-            <div class="componentes">
-                <ul>
-                    <li>Arduino UNO 📟 <span>O Cérebro do projeto</span></li>
-                    <li>Display 16x2 📱 <span>O "Monitor" para ver as informações em tempo real</span></li>
-                    <li>Protoboard 🧱 <span>Placa para fazer as conexões dos dispositivos e equipamentos</span></li>
-                    <li>Fios/Jumps 🧵</li>
-                    <li>Sensor De Distância Ultrassônico - HC-SR04 📡 <span>Seria o "OLHO" que mede a distância do objeto para o sistema identificar</span></li>
-                    <li>Álcool isopropílico 🧪🔌 <span>Foi essencial para limpar meus componentes, pois boa parte estava oxidado.</span></li>
-                </ul>
-            </div>
-        </div>
-
-        <h3>Bibliotecas Necessárias 📚📖</h3>
-        <div class="areadedownload">
-            <section>
-                <a href="../download/HC-SR04-master.zip" download="zip">HC-SR03.zip
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projeto Arduino</title>
+        <link rel="stylesheet" href="../css/style_arduino.css">
+    </head>
+    <body>
+        <header>
+            <div>
+                <a href="">
+                    <h3>
+                        Antoniel 
+                        <span class="sobrenome">
+                            da silva Alves [Niel]
+                        </span>
+                    </h3>
+                    <a href="../index.html">VOLTAR</a>
                 </a>
-                <a href="../download/HC-SR04-master.zip"><img src="../icons/download-da-nuvem.png" alt="Fazer Download"></a>
-            </section>
-
-            <section>
-                <a href="../download/NewliquidCrystal_1.3.4.zip" download="zip">NewliquidCrystal_1.zip</a>
-                <a href="../download/NewliquidCrystal_1.3.4.zip"><img src="../icons/download-da-nuvem.png" alt=""></a>
-            </section>
-        </div>
-
-        <div class="esquemademontagem">
-            <h3>Esquema de montagem</h3>
+            </div>
             
-            <section class="secao_conexoes">
-                <h2>Esquema de Ligação ⚡🔌</h2>
+            <div class="redesociais">
+                <a href="https://github.com/NielS2Dev" target="_blank"><img src="../icons/github.png" alt=""></a>
+                <a href="https://www.youtube.com/niels2l" target="_blank"><img src="../icons/youtube.png" alt=""></a>
+                <a href="https://www.instagram.com/niels2_dev/" target="_blank"><img src="../icons/instagram.png" alt=""></a>
+            </div>
 
-                <table class="tabela_conexoes">
-                    <thead>
-                        <tr class="componentes">Componentes</tr>
-                        <th>Pino no componente</th>
-                    </thead>
+            <!-- end of my header -->
+        </header>
 
-                    <tbody>
-                        <tr>
-                            <td>Sensor HC-SR04</td>
-                            <td>VCC</td>
-                            <td>5V</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>Sensor HC-SR04</td>
-                            <td>Echo</td>
-                            <td>Pino 13</td>
-                        </tr>
+        <main>
+            <div class="textos">
+                <h3>Projeto: Régua Digital com Sensor Ultrassônico e Arduino</h3>
+                <p>
+                    A ideia aqui foi criar um medidor de distância em tempo real usando o <span>ARDUINO UNO R3</span>. É um projeto prático que mostra como transformar sinais sonoros em dados que no caso do meu exemplo será a distância do objeto.
+                </p>
+            </div>
 
-                        <tr>
-                            <td>Sensor HC-SR04</td>
-                            <td>GND</td>
-                            <td>GND</td>
-                        </tr>
-
-                        <tr>
-                            <td>Display LCD 16x2</td>
-                            <td>SDA/SLC</td>
-                            
-                            <td id="info_tabela_adicional">Conforme a biblioteca 📚</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-            </section>
-
-        </div>
-
-        
-        <div class="fotodoprojetofinal">
-            <h2>Foto do projeto montado na protoboard</h2>
-            <img src="../fotosarduinos/tudo montado completo.png" alt="foto_do_arduino_com_display_sensor_tudo_no_protoboard" class="foto_projeto_feito">
-
-            <img src="../fotosarduinos/display 16x2 i2c.png" alt="" class="foto_projeto_feito">
-
-            <img src="../fotosarduinos/álcool isopropílico.png" alt="">
-
-            <img src="" alt="">
-        </div>
-
-        <div class="explicandoprojeto">
-            <h3>Explicação do Projeto</h3>
-            <div class="textoexplicandoprojeto">
-                <section>
-                    <h1>O Princípio do Ultrassom</h1>
-                    <p class="ultimostextinhos">
-                        O Sensor HC-SR04 Funciona de forma similar a um sonar de um morcego ou de um submarino. Ele possui dois "olhos" se é que podemos chamar assim em que um seria o emissor e o outro o receptor.
-                    </p>
-                     <ul>
-                            <li>Emissão
-                                <p>
-                                    O Emissor envia um pulso sonoro de alta frequência (ultrassom)
-                                </p>
-                            </li>
-
-                            <li>Eco
-                                <p>
-                                    Esse som viaja pelo ar, bate em um objeto e retorna para o receptor
-                                </p>
-                            </li>
-
-                        </ul>
-                </section>
-
-                <section>
-                    <h1>A Lógica do Código</h1>
-                    <p class="ultimostextinhos">
-                        O Arduino atua como um cronômetro de precisão, em que ele mede exatamente quanto tempo o som levou para ir e voltar, observação que durante a programação podemos acabar usando as unidades de medidas milímetros, centímetros e metros, e acabou sendo melhor CM, já que por ser um dispositivo barato, ele não é tão preciso para milímetros e muito menos para metros, logo em meus testes o que melhor funcionou foi usando a como medida a unidade de centímetros.
-
-                        Outro detalhe seria que como o a velocidade do som no ar é de aproximadamente 340m/s, o código faz uma continha...
-                    </p>
-
+            <div class="textos">
+                <h3>O Hardware que eu usei foram os seguintes equipamentos.</h3>
+            
+                <div class="componentes">
                     <ul>
-                            <li>Multiplica o tempo pela velocidade do som</li>
-                            <li>
-                                Dividimos por 2(Já que o som faz o caminho de ida e volta)
-                            </li>
+                        <li>Arduino UNO 📟 <span>O Cérebro do projeto</span></li>
+                        <li>Display 16x2 📱 <span>O "Monitor" para ver as informações em tempo real</span></li>
+                        <li>Protoboard 🧱 <span>Placa para fazer as conexões dos dispositivos e equipamentos</span></li>
+                        <li>Fios/Jumps 🧵</li>
+                        <li>Sensor De Distância Ultrassônico - HC-SR04 📡 <span>Seria o "OLHO" que mede a distância do objeto para o sistema identificar</span></li>
+                        <li>Álcool isopropílico 🧪🔌 <span>Foi essencial para limpar meus componentes, pois boa parte estava oxidado.</span></li>
                     </ul>
+                </div>
+            </div>
+
+            <h3>Bibliotecas Necessárias 📚📖</h3>
+            <div class="areadedownload">
+                <section>
+                    <a href="../download/HC-SR04-master.zip" download="zip">HC-SR03.zip
+                    </a>
+                    <a href="../download/HC-SR04-master.zip"><img src="../icons/download-da-nuvem.png" alt="Fazer Download"></a>
                 </section>
 
                 <section>
-                    <h1>A Exibição em Tempo Real</h1>
-                    <p class="ultimostextinhos">
-                        Após o cálculo, o valor é convertido para centímetros e enviado para o display LCD 16x2. O Código limpa a tela e atualiza o valor a cada 200 milissegundos, permitindo uma leitura de certa forma fluida e precisa, na condição de centimetros.
-                    </p>
+                    <a href="../download/NewliquidCrystal_1.3.4.zip" download="zip">NewliquidCrystal_1.zip</a>
+                    <a href="../download/NewliquidCrystal_1.3.4.zip"><img src="../icons/download-da-nuvem.png" alt=""></a>
                 </section>
             </div>
-        </div>
-        
-        <div class="meucodigoarduino">
-            <h3>Codigo do Arduino</h3>
 
-            <section class="codigo">
-                <section class="secao-codigo">
-                    <h2>Código Fonte do Projeto(Arduino IDE) 💻</h2>
+            <div class="esquemademontagem">
+                <h3>Esquema de montagem</h3>
+                
+                <section class="secao_conexoes">
+                    <h2>Esquema de Ligação ⚡🔌</h2>
+
+                    <table class="tabela_conexoes">
+                        <thead>
+                            <tr class="componentes">Componentes</tr>
+                            <th>Pino no componente</th>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>Sensor HC-SR04</td>
+                                <td>VCC</td>
+                                <td>5V</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Sensor HC-SR04</td>
+                                <td>Echo</td>
+                                <td>Pino 13</td>
+                            </tr>
+
+                            <tr>
+                                <td>Sensor HC-SR04</td>
+                                <td>GND</td>
+                                <td>GND</td>
+                            </tr>
+
+                            <tr>
+                                <td>Display LCD 16x2</td>
+                                <td>SDA/SLC</td>
+                                
+                                <td id="info_tabela_adicional">Conforme a biblioteca 📚</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                 </section>
 
-                <div class="codigo-container">
-                    <pre><code>
-#include  &lt;HCSR04.h&gt;
-#include  &lt;LiquidCrystal_I2C.h&gt;
+            </div>
 
-const byte pinTrig = 8;
-const byte pinEcho = 9;
+            
+            <div class="fotodoprojetofinal">
+                <h2>Foto do projeto montado na protoboard</h2>
+                <img src="../fotosarduinos/tudo montado completo.png" alt="foto_do_arduino_com_display_sensor_tudo_no_protoboard" class="foto_projeto_feito">
 
-LiquidCrystal_I2C lcd(0x27,2,1,0,4,5,6,7,3, POSITIVE);
+                <img src="../fotosarduinos/display 16x2 i2c.png" alt="" class="foto_projeto_feito">
 
-double *result;
+                <img src="../fotosarduinos/álcool isopropílico.png" alt="">
 
-void setup(){
-HCSR09.begin(pinTrig, pinEcho);
+                <img src="" alt="">
+            </div>
 
-lcd.begin(16,2);
-lcd.backligh();
-}
+            <div class="explicandoprojeto">
+                <h3>Explicação do Projeto</h3>
+                <div class="textoexplicandoprojeto">
+                    <section>
+                        <h1>O Princípio do Ultrassom</h1>
+                        <p class="ultimostextinhos">
+                            O Sensor HC-SR04 Funciona de forma similar a um sonar de um morcego ou de um submarino. Ele possui dois "olhos" se é que podemos chamar assim em que um seria o emissor e o outro o receptor.
+                        </p>
+                        <ul>
+                                <li>Emissão
+                                    <p>
+                                        O Emissor envia um pulso sonoro de alta frequência (ultrassom)
+                                    </p>
+                                </li>
 
-void loop(){
-result = HCSR09.measureDistanceCm();
+                                <li>Eco
+                                    <p>
+                                        Esse som viaja pelo ar, bate em um objeto e retorna para o receptor
+                                    </p>
+                                </li>
 
-lcd.setCursor(0, 0);
-lcd.print("Distância:");
-lcd.print(result[0], 0);
-lcd.print(" cm    ");
+                            </ul>
+                    </section>
 
-lcd.setCursor(1, 1);
-lcd.print("Régua do Niel");
+                    <section>
+                        <h1>A Lógica do Código</h1>
+                        <p class="ultimostextinhos">
+                            O Arduino atua como um cronômetro de precisão, em que ele mede exatamente quanto tempo o som levou para ir e voltar, observação que durante a programação podemos acabar usando as unidades de medidas milímetros, centímetros e metros, e acabou sendo melhor CM, já que por ser um dispositivo barato, ele não é tão preciso para milímetros e muito menos para metros, logo em meus testes o que melhor funcionou foi usando a como medida a unidade de centímetros.
 
-delay(200)
-}
+                            Outro detalhe seria que como o a velocidade do som no ar é de aproximadamente 340m/s, o código faz uma continha...
+                        </p>
 
-                    </code></pre>
+                        <ul>
+                                <li>Multiplica o tempo pela velocidade do som</li>
+                                <li>
+                                    Dividimos por 2(Já que o som faz o caminho de ida e volta)
+                                </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h1>A Exibição em Tempo Real</h1>
+                        <p class="ultimostextinhos">
+                            Após o cálculo, o valor é convertido para centímetros e enviado para o display LCD 16x2. O Código limpa a tela e atualiza o valor a cada 200 milissegundos, permitindo uma leitura de certa forma fluida e precisa, na condição de centimetros.
+                        </p>
+                    </section>
                 </div>
-            </section>
-        </div>
+            </div>
+            
+            <div class="meucodigoarduino">
+                <h3>Codigo do Arduino</h3>
 
-        <h3>Vídeo mostrando um pouco da criação do código 💻⚙️</h3>
+                <section class="codigo">
+                    <section class="secao-codigo">
+                        <h2>Código Fonte do Projeto(Arduino IDE) 💻</h2>
+                    </section>
 
-        <div class="videoarduino">
-            <iframe src="https://www.youtube.com/embed/_IJOeMMC8Fo?si=dsdvcgmZqYsKjYt-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
+                    <div class="codigo-container">
+                        <pre><code>
+    #include  &lt;HCSR04.h&gt;
+    #include  &lt;LiquidCrystal_I2C.h&gt;
 
-    </main>
+    const byte pinTrig = 8;
+    const byte pinEcho = 9;
 
-    <footer>
-        <a href="https://www.github.com/NielS2Dev" target="_blank">© Site sendo desenvolvido por NielS2</a>
-    </footer>
-</body>
-</html>
+    LiquidCrystal_I2C lcd(0x27,2,1,0,4,5,6,7,3, POSITIVE);
+
+    double *result;
+
+    void setup(){
+    HCSR09.begin(pinTrig, pinEcho);
+
+    lcd.begin(16,2);
+    lcd.backligh();
+    }
+
+    void loop(){
+    result = HCSR09.measureDistanceCm();
+
+    lcd.setCursor(0, 0);
+    lcd.print("Distância:");
+    lcd.print(result[0], 0);
+    lcd.print(" cm    ");
+
+    lcd.setCursor(1, 1);
+    lcd.print("Régua do Niel");
+
+    delay(200)
+    }
+
+                        </code></pre>
+                    </div>
+                </section>
+            </div>
+
+            <h3>Vídeo mostrando um pouco da criação do código 💻⚙️</h3>
+
+            <div class="videoarduino">
+                <iframe src="https://www.youtube.com/embed/_IJOeMMC8Fo?si=dsdvcgmZqYsKjYt-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+        </main>
+
+        <footer>
+            <a href="https://www.github.com/NielS2Dev" target="_blank">© Site sendo desenvolvido por NielS2</a>
+        </footer>
+    </body>
+    </html>
