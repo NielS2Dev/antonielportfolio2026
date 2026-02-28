@@ -131,6 +131,24 @@ main h3:hover{
     cursor: pointer;
 }
 
+.paraimagem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.paraimagem img{
+    width: 60%;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    margin: 10px 0px 10px 0px;
+}
+
+.paraimagem img:hover{
+    transform: scale(1.05);
+    filter: drop-shadow(3px 3px 3px blue);
+}
+
 .textos2{
     text-align: center;
     width: 100%;
