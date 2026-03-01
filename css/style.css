@@ -347,6 +347,7 @@ iframe{
     transition: transform 0.2s;
     border: 2px solid blue;
     transition: transform 0.2s, border 0.2s, filter 0.2s;
+    margin-bottom: 50px;
 }
 
 iframe:hover{
@@ -421,4 +422,15 @@ iframe:hover{
         width: 370px;
         height: 250px;
     }
+
+    .meusprojetos{
+        grid-template-columns: 1fr;
+        width: 100%;
+        align-items: center;
+    }
+
+    .projetos{
+        transform: scale(0.8);
+    }
+
 }
