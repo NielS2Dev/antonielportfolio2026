@@ -36,8 +36,17 @@
             <h1>🖥️ Estrutura Base do Nosso RPG 🏰⚔️</h1>
         </div>
 
+        <div class="download">
+            <a href="../download/Meu Jogo.rar" download="">
+                <img src="../download/download.png" alt="" class="downloadfoto">
+            </a>
+            <a href="../download/Meu Jogo.rar" download="">
+                <p>Download do Projeto</p>
+            </a>
+        </div>
+
         <div class="conteudo">
-            <h2>🧱 A Arquitetura do Nosso Jogo em C 🖥️</h2>
+            <h2>🖥️ A Arquitetura do Nosso Jogo em C </h2>
             <p>
                 A jornada de desenvolvimento do nosso projeto de RPG foi marcada por desafios técnicos e importantes decisões de design. A seguir, detalhamos como o código foi estruturado e as escolhas que fizemos para garantir a estabilidade do produto final.
             </p>
@@ -49,6 +58,99 @@
                 Inicialmente, o projeto foi concebido utilizando a estrutura Console Application C Project, distribuindo o código em vários arquivos. No entanto, essa abordagem logo encontrou grandes obstáculos:
             </p>
             <img src="../fotosrpg/001.png" alt="" class="fotodeitada">
+        </div>
+
+        <div class="lista">
+            <ul>
+                <li>
+                    <strong id="detalhado">Problemas de Dependência:</strong> A distribuição do executável (.exe) em outros computadores frequentemente resultava em erros de dependência de bibliotecas externas (como libxml ou SDL).
+                </li>
+
+                <li>
+                    <strong id="detalhado">Portabilidade Limitada: </strong>A execução em diferentes sistemas operacionais (como Linux ou macOS) tornava-se inviável devido a essas dependências de pacotes.
+                </li>
+            </ul>
+        </div>
+
+        <table class="bibliotecas">
+            <thead>
+                <tr>
+                    <th>bibliotecas</th>
+                    <th>Finalidade</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><code>#include &lt;stdio.h&gt;</code></td>
+                    <td>Entrada e saída (funções como printf e scanf).</td>
+                </tr>
+
+                <tr>
+                    <td><code>#include &lt;string.h&gt;</code></td>
+                    <td>Manipulação de cadeias de caracteres.</td>
+                </tr>
+
+                <tr>
+                    <td><code>#include &lt;stdbool.h&gt;</code></td>
+                    <td>Uso do tipo de dados booleano (true/false).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="conteudo">
+            <h2>
+                🛠️ Configuração Inicial e Estrutura de Dados
+            </h2>
+
+            <ul>
+                <li>
+                    <strong id="detalhado">Acentuação:</strong> Utilizamos SetConsoleOutputCP(1252) para garantir que o console do Windows exibisse corretamente letras com acentuação, fundamental para a qualidade do nosso texto em português.
+                </li>
+
+                <li>
+                    <strong id="detalhado">Struct usuario:</strong> A estrutura de dados para o herói foi definida com os atributos básicos de um RPG.
+                </li>
+            </ul>
+
+            <img src="../fotosrpg/002.png" alt="" class="fotodeitada">
+
+            <h2>
+                ✨ Experiência Visual e Animações
+            </h2>
+            <p>Investimos em funções para tornar a experiência no console mais dinâmica:</p>
+            <ul>
+                <li>
+                    <strong id="detalhado">Mudar Cor:</strong> A função void mudarcor(int cor) utiliza o SetConsoleTextAttribute do Windows, permitindo personalizar a cor do texto do console.
+                </li>
+
+                <li>
+                    <strong id="detalhado">ASCII Art:</strong> Textos de apresentação, como "UERN" e "Projeto RPG", foram convertidos em ASCII Art utilizando a ferramenta patorjk.com/software/taag e integrados ao código usando printf.
+                </li>
+            </ul>
+            
+            <img src="../fotosrpg/003.png" alt="" class="fotodeitada">
+
+            <h2>🛡️ Validação da Entrada do Jogador</h2>
+            <p>A experiência do usuário começa com a escolha do nick. Implementamos um laço while(!nomevalido) para garantir que o nome seja válido:</p>
+            
+            <ul>
+                <li>
+                    O loop se repete até que um nome aceitável seja fornecido.
+                </li>
+                <li>
+                    É feita uma verificação para impedir que o nick contenha espaços ou esteja vazio. Caso contrário, um erro é exibido.
+                </li>
+                <li>
+                    Após a validação bem-sucedida, o nomevalido muda para true, encerrando o loop e exibindo a mensagem de boas-vindas.
+                </li>
+            </ul>
+
+            <h2>
+                📂 Ícone Personalizado do Sistema (.exe) 🛠️
+            </h2>
+
+            <img src="../fotosrpg/008.png" alt="" class="fotodeitada">
         </div>
 
     </main>
