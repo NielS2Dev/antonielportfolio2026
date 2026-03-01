@@ -105,11 +105,14 @@ main{
 
 .textosobremim{
     transition: text-shadow 0.3s;
+    text-align: justify;
+    padding-right: 15px;
 }
 
 .textosobremim:hover{
-    text-shadow: 3px 3px 3px rgb(255, 94, 0);
+    text-shadow: 3px 3px 3px rgb(98, 98, 98);
     cursor: pointer;
+
 }
 /* bloco "Meusestudos" possui sobre meu progresso em estudos específicos. */
 
