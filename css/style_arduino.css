@@ -449,19 +449,7 @@ footer a{
         transform: scale(1);
     }
 
-    body {
-        /* No celular, esqueça as 3 colunas. Use uma só de 100% */
-        grid-template-columns: 100%; 
-        grid-template-areas: 
-            "header"
-            "main"
-            "footer";
-    }
-
-    main {
-        width: 100vw; /* Garante que o main não passe da largura da tela */
-        padding: 10px; /* Reduz um pouco o padding para ganhar espaço */
-    }
+    
 
 }
 
