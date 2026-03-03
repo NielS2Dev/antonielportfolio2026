@@ -252,6 +252,8 @@ thead tr th:hover{
     backdrop-filter: blur(20px);
     background-color: rgba(0, 0, 0, 0.336);
     transition: background-color 0.3s ease;
+    font-family: var(--minha_fonte);
+    font-size: 0.9em;
 }
 
 .bibliotecas:hover{
@@ -269,6 +271,9 @@ thead tr th:hover{
     padding: 2px;
 }
 
+.finalizando{   
+    background-color: rgba(9, 34, 116, 0.324);
+}
 pre{
     max-width: 100%;
     overflow-x: auto;

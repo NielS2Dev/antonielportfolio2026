@@ -154,8 +154,109 @@
             </h2>
 
             <img src="../fotosrpg/008.png" alt="" class="fotodeitada">
+
+            <h2>
+                🛠️ Structs: O Arquétipo do Herói 🦸‍♂️🛡️ (Definindo Nome, HP e Dano 💥💪)
+            </h2>
+
+            <p>
+                A Parte principal do nosso projeto é o uso eficiente de estruturas (structs) em C. Nós fizemos essas estruturas para modelar de forma limpa e organizada todos os elementos dinâmicos do jogo: desde o herói do jogador até os inimigos e seus recursos de combate, usando uma linguagem colaborativa.
+            </p>
+
+            <img src="../fotosrpg/monstro.h.png" alt="" class="fotodeitada">
+
+            <p>
+                Nós fizemos essa struct na intenção de armazenar os dados base dos inimigos que o jogador enfrentará. Ela representa as características de qualquer criatura não-jogável do jogo (inimigo).
+            </p>
+        </div>
+        
+        <table class="bibliotecas">
+            <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Tipo</th>
+                    <th>Finalidade</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>char nomeDosMonstros[50]</td>
+                    <td>char[]</td>
+                    <td>Guarda o nome do monstro (ex: "Orc", "Dragão Jovem").</td>
+                </tr>
+
+                <tr>
+                    <td>int ataqueMonstros</td>
+                    <td>int</td>
+                    <td>Valor base do ataque que o monstro usará contra o herói.</td>
+                </tr>
+
+                <tr>
+                    <td>int defesaMonstros</td>
+                    <td>int</td>
+                    <td>Define a defesa do monstro, subtraindo-se do dano do herói.</td>
+                </tr>
+
+                <tr>
+                    <td>int vidaMonstros</td>
+                    <td>int</td>
+                    <td>Armazena a vida máxima inicial do monstro.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="conteudo">
+            <h2>🧪 Sistema de Poções</h2>
+            <p>
+                Nós implementamos o Sistema de Poções para adicionar uma **camada tática vital** ao nosso combate. Ele transforma o uso de itens de cura em uma decisão estratégica, onde o jogador precisa gerenciar recursos limitados para sobreviver a múltiplos confrontos. A gestão sábia de itens é um diferencial crítico entre a vitória e o *game over*.
+            </p>
+            <p>
+                Nós começamos criando a struct porcao para modelar os tipos de itens consumíveis que o herói pode encontrar. Cada poção é definida por seus efeitos, permitindo que tenhamos itens especializados em diferentes atributos.
+            </p>
+            <ul>
+                <li>
+                    Tipos de Efeitos: A estrutura armazena valores para aumentoVida (cura), aumentoAtaque (bônus ofensivo) e aumentoDefesa (bônus defensivo).
+                </li>
+                <li>
+                    Lista de Poções: No arquivo pocao.c, criamos uma lista (listaPorcoes) com tipos variados, desde poções que só curam até o **"Elixir de Defesa Sólida"**, que aumenta permanentemente a defesa do herói na batalha atual.
+                </li>
+            </ul>
+
+            <img src="../fotosrpg/listaporcao.png" alt="" class="fotodeitada">
+            <img src="../fotosrpg/porcao.png" alt="" class="fotodeitada">
+            
+            <h2>🧠 A Lógica Central e o Fluxo do Jogo</h2>
+            <p>
+                A arquitetura do nosso RPG é baseada na sincronia de vários módulos. O estado do herói é passado por referência (*heroi) e monitorado por múltiplos loops e verificações condicionais, garantindo que a lógica de gameplay e a rastreabilidade de dados funcionem em perfeita sintonia.
+            </p>
+            <p>
+                Lógica de Inicialização e Gerenciamento de Memória
+            </p>
+
+            <ul>
+                <li>Controle de Estado: A função usa a variável estado_atual para rastrear a classe exibida (0 a 3).</li>
+                <li>Fórmula Modular Cíclica: Para avançar e retroceder nas setas, a lógica usa a matemática de módulo (%) para garantir que o array seja percorrido de forma cíclica (ex: da classe 3 para a 0, e vice-versa).</li>
+            </ul>
+            <img src="../fotosrpg/logicamodular.png" alt="" class="fotodeitada">
+
+            <p>Avançar: estado_atual = (estado_atual + 1) % total_classes;</p>
+
+            <p>Retroceder: estado_atual = ((estado_atual - 1 + total_classes) % total_classes);</p>
+
+            <ul>
+                <li>Integração Visual: A cada mudança de estado, a função chama o módulo de Desenhos (guerreiro(), mago(), etc.), alinhando visual e estado.</li>
+                <li>Atribuição de Atributos: O ID da classe é passado para atribuirEInicializarHeroi() (do log.c) para popular os campos da struct usuario. Exemplo: Guerreiro (1500 de vida); Mago (600 de vida).</li>
+                <li>Atribuição de Habilidades: Em seguida, atribuirClasse() (do combate.c) copia os dados do bancoDeSkills para o array skills[3] do herói.</li>
+                <li>Registro Inicial (log.c): A chamada a salvarDadosUsuario() abre o HistoricoJogadores.txt em modo **apêndice** ("a") e registra o nick e os atributos base do herói.</li>
+            </ul>
+
+            <p class="finalizando">
+                Enfim, este foi um projeto simples que desenvolvi para uma apresentação na faculdade: um jogo construído inteiramente em C puro, utilizando o Dev-C++. Foi um desafio gratificante aplicar os conceitos fundamentais da lógica de programação e ver o código ganhando vida.
+            </p>
         </div>
 
+    
     </main>
 
     <footer>
