@@ -449,7 +449,13 @@ footer a{
         transform: scale(1);
     }
 
-    
+    body{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "main"
+            "footer";
+    }
 
 }
 
